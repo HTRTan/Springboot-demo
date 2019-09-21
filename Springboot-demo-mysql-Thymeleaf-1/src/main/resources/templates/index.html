@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户全部数据</title>
+</head>
+<body>
+    <a href="#">新建用户</a>
+    <table>
+        <thead>
+            <tr>
+                <th>用户ID(user_id)</th>
+                <th>用户名(username)</th>
+                <th>密码(password)</th>
+                <th>邮箱(email)</th>
+                <th>电话(phone)</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="UserDataBean:${AllUserData}">
+                <td th:text="${UserDataBean.getUser_id()}"></td>
+                <td th:text="${UserDataBean.getUsername()}"></td>
+                <td th:text="${UserDataBean.getPassword()}"></td>
+                <td th:text="${UserDataBean.getEmail()}"></td>
+                <td th:text="${UserDataBean.getPhone()}"></td>
+                <td><a href="#">修改</a> <a href="#">删除</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
